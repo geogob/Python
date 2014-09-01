@@ -1,9 +1,6 @@
 Python
 ======
 
-Python Introduction
-
-This file is a simple code of introduction to Python language.
-
+Python folder. Works in image processing and computer vision
 
 Author: George Oliveira Barros.
