@@ -46,5 +46,25 @@ print'-------------------------'
 print'Matriz'
 matriz=[[1,2,3],[1,1,1],[2,2,2]]
 
+
 #Dicionários
+print'-------------------------'
+print'Dicionários'
+
+dicionario = {'Nome':'George','Idade':'22', 'Altura':'163'}
+print dicionario
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
