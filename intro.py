@@ -1,5 +1,9 @@
 #geogobgob@gmail.com
 
+#Começando os estudos. Exercícios da apostila Bem vindo ao Python de José Laback, UNESP.
+#Variáveis , estruturas de armazenameto e manipulação.
+
+
 #--------Impressão de Strings-------
 print '-------------------------------------'
 print 'trabalhando com strings:'
@@ -40,8 +44,8 @@ vetor = vetor + [0,1,0,1]
 print vetor
 print 'Tamanho da lista igual a: ' + str(len(vetor))
 
-# A estrututa de uma string é bem amarrada. Logo nós podemos mudar o conteúdo de uma determinad posição de uma lista, mas não de uma string
-
+# A estrututa de uma string é bem amarrada. Logo nós podemos mudar
+#o conteúdo de uma determinad posição de uma lista, mas não de uma string
 print'-------------------------'
 print'Matriz'
 matriz=[[1,2,3],[1,1,1],[2,2,2]]
@@ -51,14 +55,21 @@ matriz=[[1,2,3],[1,1,1],[2,2,2]]
 print'-------------------------'
 print'Dicionários'
 
-dicionario = {'Nome':'George','Idade':'22', 'Altura':'163'}
+dicionario = {'Nome':'George','Idade':'22', 'Altura':163}
+print dicionario['Nome']
+
+dicionario['Altura'] = dicionario['Altura']+12
 print dicionario
+print dicionario.keys();
+print dicionario.items();
 
-
-
-
-
-
+#Manipulando uma lista
+vetor.append('poncan')
+print vetor;
+vetor.insert(0,'start')
+print vetor;
+vetor.remove('start')
+print vetor;
 
 
 
