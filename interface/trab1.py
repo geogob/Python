@@ -3,8 +3,7 @@
 Created on Wed Sep 03 14:29:03 2014
 
 @author: George Oliveira Barros. 
-Atividade da disciplina de Fundamentos de Processamento de Imagens.
-Programa de Pós Graduação em Computação Aplicada - Mestrado. UEFS. Bahia.
+Aprendendo interface gráfica em Python.
 """
 
 from Tkinter import *
