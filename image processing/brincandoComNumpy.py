@@ -9,6 +9,7 @@ Created on Fri Sep 05 11:17:47 2014
 from numpy import *
 from PIL import Image
 
-a = array(Image.open('cheio.jpg'))
+a = adreadgray('img/cheio.jpg')
+adshow(a,'Imagem Glomérulo')
 
 
