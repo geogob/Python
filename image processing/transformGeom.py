@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Sep 03 21:04:46 2014
-
-@author: George O. Barros
-
+@author: George O. Barros //geogobgob@gmail.com
 Trabalho prático 01 - Fundamentos de Processamento de Imagens - PGCA Mestrado - UEFS, BA.
-
 My Home, my life
 
 """
