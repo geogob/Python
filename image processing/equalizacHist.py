@@ -9,7 +9,12 @@ from PIL import Image
 from pylab import *
 import ia636 as ia
 
-im = array(Image.open('img/rosa.jpg').convert('L')) # read image to array
+x = array(Image.open('img/z.jpg'))
+
+im = array(Image.open('img/z.jpg').convert('L')) # read image to array
+figure()
+imshow(x)
+
 #Imagem 
 figure()# create a new figure
 gray() # don't use colors
