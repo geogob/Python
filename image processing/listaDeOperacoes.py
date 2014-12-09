@@ -9,12 +9,12 @@ from PIL import Image
 from pylab import *
 import ia636 as ia
 
-imRGB = array(Image.open('img/confuso.jpg')) #imagem RGB
-imGrayLevel = array(Image.open('img/confuso.jpg').convert('L'))# Imagem em nível de cinza
+imRGB = array(Image.open('img/z.jpg')) #imagem RGB
+imGrayLevel = array(Image.open('img/z.jpg').convert('L'))# Imagem em nível de cinza
 
 #.................................................FIGURA 1
 fig, ax = plt.subplots(2, 4, figsize=(14, 8))
-fig.suptitle('Some Operations:')
+fig.suptitle('George O. Barros - some operations')
 ax1, ax2, ax3, ax4, ax5, ax6, ax7, ax8 = ax.ravel()
 
 #Operações:
@@ -43,6 +43,8 @@ ax2.set_title('Gray Level (0-255)')
 
 ax3.imshow(T2[T[imGrayLevel]], vmin=0, vmax=255, cmap=plt.cm.gray) #Realce de partes escuras da equalização de uma imagem x: t2(t(x))
 ax3.set_title('logaritmica - realce partes escuras')
+
+#T[ia.ianormalize(T3[imGrayLevel]).astype(np.uint8)]
 
 ax4.imshow(T3[imGrayLevel], vmin=0, vmax=255, cmap=plt.cm.gray)
 ax4.set_title('Negative')

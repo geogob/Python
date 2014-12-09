@@ -7,7 +7,7 @@ Created on Wed Oct 22 00:32:27 2014
 from ia636 import *
 from numpy import *
 
-im = array(Image.open('img/confuso.jpg'))
+im = array(Image.open('img/z.jpg'))
 #F = iadft(im)
 #Fv = iadftview(F)
 #F = np.fft.fft2(image)
@@ -15,5 +15,6 @@ im = array(Image.open('img/confuso.jpg'))
 
 imshow(im)
 
-F = iadft(f)
+#F = iadft(f)
 
+show()
