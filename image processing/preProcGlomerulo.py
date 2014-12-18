@@ -19,7 +19,7 @@ from pylab import *
 import ia636 as ia
 import numpy as np
 
-imRGB = Image.open('img/z.jpg') #imagem RGB
+imRGB = Image.open('img/teste/prob2.jpg') #imagem RGB
 imGrayLevel = np.array(imRGB.convert('L'))# Conversão para nível de cinza
 
 #.................................................FIGURA

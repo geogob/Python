@@ -9,8 +9,8 @@ from PIL import Image
 from pylab import *
 import ia636 as ia
 
-imRGB = array(Image.open('img/z.jpg')) #imagem RGB
-imGrayLevel = array(Image.open('img/z.jpg').convert('L'))# Imagem em nível de cinza
+imRGB = array(Image.open('img/teste/prob2.jpg')) #imagem RGB
+imGrayLevel = array(Image.open('img/teste/prob2.jpg').convert('L'))# Imagem em nível de cinza
 
 #.................................................FIGURA 1
 fig, ax = plt.subplots(2, 4, figsize=(14, 8))
