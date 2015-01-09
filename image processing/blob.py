@@ -1,9 +1,12 @@
 from matplotlib import pyplot as plt
+from skimage import data
 from skimage.feature import blob_dog, blob_log, blob_doh
 from math import sqrt
-from skimage import io
+from skimage.color import rgb2gray
+from PIL import Image
 
-image_gray = io.imread('pb.jpg', as_grey=False)
+image = data.hubble_deep_field()[0:500, 0:500]
+image_gray = rgb2gray(image)
 
 blobs_log = blob_log(image_gray, max_sigma=30, num_sigma=10, threshold=.1)
 # Compute radii in the 3rd column.
@@ -23,7 +26,7 @@ sequence = zip(blobs_list, colors, titles)
 for blobs, color, title in sequence:
     fig, ax = plt.subplots(1, 1)
     ax.set_title(title)
-    ax.imshow(image_gray, interpolation='nearest')
+    ax.imshow(image, interpolation='nearest')
     for blob in blobs:
         y, x, r = blob
         c = plt.Circle((x, y), r, color=color, linewidth=2, fill=False)
