@@ -13,7 +13,7 @@ from skimage.restoration import denoise_tv_chambolle
 from skimage  import img_as_ubyte
 from skimage.color import rgb2gray
 
-imRGB = Image.open('img/teste/prob5.jpg') #imagem RGB
+imRGB = Image.open('img/teste/prob2.jpg') #imagem RGB
 imGrayLevel = array(imRGB.convert('L'))# Convertendo imagem para nível de cinza
 imRGB = array(imRGB)
 #.................................................FIGURA 1
@@ -72,7 +72,8 @@ ax6.set_title('negative')
 
 im = Image.fromarray(uint8(binary_global)) #transformando a imagem em um array do tipo PIL OBJECT - Isso facilitará ao aplicar as próximas funções.
 im.save("x.jpg")
-
+im = Image.fromarray(uint8(imSeguim))
+im.save("y.jpg")
 #.......................................IDENTIFICAÇÃO DE LESÕES:
 
 #Função de fatiamento e identificação de lesões HERE !!!
