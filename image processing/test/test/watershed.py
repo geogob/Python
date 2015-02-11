@@ -19,7 +19,7 @@ x1, y1, x2, y2 = 28, 28, 44, 52
 r1, r2 = 16, 20
 mask_circle1 = (x - x1)**2 + (y - y1)**2 < r1**2
 mask_circle2 = (x - x2)**2 + (y - y2)**2 < r2**2
-image = np.array(Image.open("C:/Users/gob/Documents/GitHub/Python/image processing/y.jpg")) #np.logical_or(mask_circle1, mask_circle2)
+image = np.array(Image.open("y.jpg")) #np.logical_or(mask_circle1, mask_circle2)
 
 #C:/Users/gob/Documents/GitHub/Python/image processing/
 
@@ -40,6 +40,8 @@ ax1.imshow(-distance, cmap=plt.cm.jet, interpolation='nearest')
 ax1.set_title('Distances')
 ax2.imshow(labels, cmap=plt.cm.spectral, interpolation='nearest')
 ax2.set_title('Separated objects')
+
+
 print labels
 
 for ax in axes:
@@ -47,4 +49,8 @@ for ax in axes:
 
 fig.subplots_adjust(hspace=0.01, wspace=0.01, top=1, bottom=0, left=0,
                     right=1)
+
+im = Image.fromarray(uint8(labels))
+im.save("t.jpg")
+
 plt.show()

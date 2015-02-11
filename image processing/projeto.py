@@ -78,7 +78,7 @@ def seguimentacao(realceNucleos):
     T1 = np.arange(256)  # função identidade
     T3 = 255 - T1 # negativo
     
-    """ TESTAR A OTSU ADAPTIVO - LOCAL"""
+    """ TESTAR A OTSU ADAPTIVO - LOCAL // DEPOIS"""
     #Binarização - Otsu Global
     global_thresh = threshold_otsu(realceNucleos)
     global_thresh = global_thresh - 42
@@ -125,45 +125,36 @@ def cropBlobs(image, blobs):
     T4 = 255 * (T1 > 128) # threshold 128
     image = T4[image]
     #.....................................
-    w,h = image.shape #dimensões da imagem
+    h,w = image.shape #dimensões da imagem
     tam, tuplas = blobs.shape #dimensões da lista de bolhas
-    print w, h
-    listaCropBlobs = [None]*tam; #Lista Vazia do tamanho da quantidade de blobs (bolhas), armazenarei aqui as matrizes correspondentes ao fatiamento
+    listaCropBlobs = [None]*tam; #Lista Vazia do tamanho da quantidade de blobs (bolhas)
     i=0
-    cont=0 #auxiliar para testes
     for blob in blobs:
         y, x, r = blob
-        
         #Atribuindo coordenadas que serão utilizadas no fatiamento
         wi = x-r
         wf = x+r
         hi = y-r
         hf = y+r
-        
         #Verificando os limites da imagem
         if wi<0:
-            cont+=1;
             wi=0
         if wf>(w-1):
-            cont+=1;
             wf=w-1 
         if hi<0:
-            cont+=1;
             hi=0
         if hf>(h-1):
-            cont+=1;
             hf=h-1
             
         #Fatiamento
-        region = image[wi:wf, hi:hf]
+        region = image[hi:hf, wi:wf]
         listaCropBlobs[i] = region #Armazena em uma lista
         i+=1;
+        
     return listaCropBlobs
 
-
-
     
-def seguimentacaoSubIm(im):
+def watershedSeguim(im):
     #Segmenta as subimagens obtidas com o algoritmo watershed, o mesmo separa os objetos que estão unidos.
     print "Seguimentação das Submatrizes HERE !"
     
@@ -181,23 +172,19 @@ realceNucleos = preProcessing(imGrayLevel)
 
 #Seguimentação
 imSeguim = seguimentacao(realceNucleos) 
-
 image = Image.open("x.jpg" ) #Caminho padrão da imagem salva na última etapa
 image = ImageOps.invert(image)#Inversão da imagem 
 image.save("inverted.jpg")
 image = io.imread("inverted.jpg", as_grey=False)
+imageCopy = image
 
 
 #Extração de características
-
 blobs = blobDetection(1, 10, 30)
-
-cropBlobs(image, blobs)
+listaCropBlobs = cropBlobs(imageCopy, blobs)
+fig3, ax = pyplot.subplots(1, 1)
+fig.suptitle('Fatiamento - Ex: SubImagem 35')
+ax.imshow(listaCropBlobs[35])
+    
 #..................................................................
 plt.show() #Mostrar tudo
-
-
-
-#blobDetection(1, 30, 10)
-#blobDetection(1, 10, 5)
-#blobDetection(1, 10, 10)
